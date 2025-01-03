@@ -45,6 +45,7 @@ def main():
     approach_fn = APPROACHES[config.approach]
 
     num_gpus = torch.cuda.device_count()
+    logger.info("Num GPUS %d Start!" % num_gpus)
     llm = LLM(
         model=config.model_path,
         gpu_memory_utilization=config.gpu_memory_utilization,
